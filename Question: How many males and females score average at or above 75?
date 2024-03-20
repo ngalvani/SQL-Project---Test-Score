@@ -38,3 +38,5 @@ WHERE
 gender = 'male' ;
 
 --view "malecount.png--
+
+Based of the data, males had more averages above 75 comapred to females, with a count of 54 to 51.
