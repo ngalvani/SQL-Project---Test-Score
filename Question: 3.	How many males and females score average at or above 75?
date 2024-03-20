@@ -1,0 +1,40 @@
+CREATE Table gender_scores
+SELECT gender, math_score, reading_score, writing_score
+FROM testscores;
+
+--Now show average score for each person--
+
+SELECT *,
+    (math_score + reading_score + writing_score) / 3 AS avg_score_per_person
+FROM 
+    gender_scores;
+
+--now limit to average >75--
+
+SELECT 
+    *,
+    (math_score + reading_score + writing_score) / 3 AS avg_score_per_person
+FROM 
+    gender_scores
+WHERE
+    (math_score + reading_score + writing_score) / 3 >= 75;
+
+--view "avgscore75.png"--
+
+--for female--
+
+SELECT COUNT(gender) AS female_count
+FROM gender_scores
+WHERE
+gender = 'female' ;
+
+--view "femalecount.png--
+
+--for male--
+
+SELECT COUNT(gender) AS male_count
+FROM gender_scores
+WHERE
+gender = 'male' ;
+
+--view "malecount.png--
