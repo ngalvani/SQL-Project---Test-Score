@@ -1,0 +1,21 @@
+CREATE TABLE parental_education AS
+SELECT 
+    parental_level_of_education,
+    ROUND(AVG(math_score), 2) AS avg_math_score,
+    ROUND(AVG(reading_score), 2) AS avg_reading_score,
+    ROUND(AVG(writing_score), 2) AS avg_writing_score,
+    ROUND(AVG((math_score + reading_score + writing_score) / 3), 2) AS overall_avg_score
+FROM 
+    testscores
+GROUP BY 
+    parental_level_of_education;
+
+Then I wanted to see the scores in descending order
+
+SELECT * 
+FROM parental_education
+ORDER BY overall_avg_score DESC;
+
+The result show that the highest overall averages were from parents with bachelor’s degree, followed by associates and masters. 
+
+--see “parenteducation.png”--
