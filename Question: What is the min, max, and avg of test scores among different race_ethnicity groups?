@@ -1,0 +1,18 @@
+CREATE TABLE ethnicity_scores AS
+SELECT 
+    race_ethnicity,
+    MIN(math_score) AS min_math_score,
+    MAX(math_score) AS max_math_score,
+    ROUND(AVG(math_score), 2) AS avg_math_score,
+    MIN(reading_score) AS min_reading_score,
+    MAX(reading_score) AS max_reading_score,
+    ROUND(AVG(reading_score), 2) AS avg_reading_score,
+    MIN(writing_score) AS min_writing_score,
+    MAX(writing_score) AS max_writing_score,
+    ROUND(AVG(writing_score), 2) AS avg_writing_score
+FROM 
+    testscores
+GROUP BY 
+    race_ethnicity;
+
+--see "ethnicityscore.png--
