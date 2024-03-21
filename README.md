@@ -13,7 +13,7 @@ The primary goal of this project is to demonstrate proficiency in SQL by queryin
 **Some of the questions explored in this project include:**
 
 <br> How many males and females score average at or above 75?<br>
-<br> What is the distribution of test scores among different race/ethnicity groups?<br>
+<br> What is the min, max, and avg of test scores among different race/ethnicity groups?<br>
 <br> Is there a difference in test scores between students who completed the test preparation course and those who didn't?<br>
 <br> How do test scores vary across different parental levels of education?<br>
 
