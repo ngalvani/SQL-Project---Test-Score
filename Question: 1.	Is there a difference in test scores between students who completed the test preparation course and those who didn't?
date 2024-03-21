@@ -1,0 +1,48 @@
+CREATE Table test_prep
+SELECT 
+gender, test_preparation_course, math_score, reading_score, writing_score
+FROM testscores
+
+Now take the average of test scores who completed the test preparation course
+
+SELECT *,
+    (math_score + reading_score + writing_score) / 3 AS avg_score_per_person
+FROM test_prep
+WHERE test_preparation_course = 'completed';
+
+--view “prepcompleted.png”--
+
+Now take the average of test scores who did NOT completed the test preparation course
+
+SELECT *,
+    (math_score + reading_score + writing_score) / 3 AS avg_score_per_person
+FROM test_prep
+WHERE test_preparation_course = 'none'
+LIMIT 40;
+
+--too many to show in one png; view “noneprepcomplete.png”—
+
+Taking it a step further to see the average overall score for those who completed the test preparation
+
+SELECT 
+    AVG((math_score + reading_score + writing_score) / 3) AS overall_avg_score
+FROM 
+    test_prep
+WHERE 
+    test_preparation_course = 'completed';
+
+--view “overallprepcompleted.png”—
+
+
+Taking it a step further to see the average overall score for those who did NOT complete the test preparation
+
+SELECT 
+    AVG((math_score + reading_score + writing_score) / 3) AS none_overall_avg_score
+FROM 
+    test_prep
+WHERE 
+    test_preparation_course = 'none';
+
+--view “overallnoneprepcomplete.png”—
+
+We can conclude that those who did not take the preparation course score to have an average of 60.61, compared to those who did complete the preparation course to be a 70.29. So, the preparation course does help based of this data.
